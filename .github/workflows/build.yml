@@ -5,7 +5,7 @@ name: Build flask app using Reusable template
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build:
     uses: mhassaankhokhar/reusable-templates/.github/workflows/build-template.yml@master
