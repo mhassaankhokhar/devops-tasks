@@ -1,5 +1,5 @@
 name: Build flask app using Reusable template
-# Find the build template on the URL below.
+# Find the build template on the url below.
 # https://github.com/mhassaankhokhar/reusable-templates/blob/master/.github/workflows/build-template.yml
 
 on:
