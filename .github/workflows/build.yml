@@ -1,0 +1,16 @@
+name: Build flask app using Reusable template
+# Find the build template on the url below.
+# https://github.com/mhassaankhokhar/reusable-templates/blob/master/.github/workflows/build-template.yml
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    uses: mhassaankhokhar/reusable-templates/.github/workflows/build-template.yml@master
+    with:
+      docker-image-name: "mhassaankhokhar/test"
+    secrets:
+      DOCKER_USER: ${{secrets.DOCKER_USER}}
+      DOCKER_PASS: ${{secrets.DOCKER_PASS}}
