@@ -33,13 +33,13 @@ jobs:
     - name: Deploy to Server
       run: |
         ssh ubuntu@${{ secrets.HOST }} << 'EOF'
-          sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          sudo docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
 
           # Stop and remove existing container if exists
           sudo docker rm -f flask || true
 
           # Pull latest image
-          sudo docker pull your-dockerhub-username/your-image:latest
+          sudo docker pull mhassaankhokhar/test:latest
 
           # Run container on port 5000
           sudo docker run -d \
