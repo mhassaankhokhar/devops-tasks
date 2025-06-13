@@ -93,4 +93,3 @@ Resources:
           SubnetId: !Ref PublicSubnet
           GroupSet:
           - !Ref SecurityGroup
-
