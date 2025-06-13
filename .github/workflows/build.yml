@@ -16,6 +16,7 @@ jobs:
       DOCKER_PASS: ${{secrets.DOCKER_PASS}}
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -32,18 +33,18 @@ jobs:
     - name: Deploy to Server
       run: |
         ssh ubuntu@${{ secrets.HOST }} << 'EOF'
-          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
           # Stop and remove existing container if exists
-          docker rm -f flask || true
+          sudo docker rm -f flask || true
 
           # Pull latest image
-          docker pull your-dockerhub-username/your-image:latest
+          sudo docker pull your-dockerhub-username/your-image:latest
 
           # Run container on port 5000
-          docker run -d \
+          sudo docker run -d \
             --name flask \
             -p 5000:5000 \
             --restart unless-stopped \
-            your-dockerhub-username/your-image:latest
+            mhassaankhokhar/test:latest
         EOF
