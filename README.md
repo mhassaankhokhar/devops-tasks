@@ -1,10 +1,8 @@
-# nexaquanta
-
 ```mermaid
 flowchart TB
   subgraph Global
     DNS[Route 53 Geo DNS]
-    CF[CloudFront Global or Regional]
+    CF[CloudFront - Global or Regional]
   end
 
   DNS --> CF
@@ -18,8 +16,8 @@ flowchart TB
       AZ3_US[AZ-3]
     end
     ECS_US[ECS or K8s - API Pods]
-    RDS_US[RDS Multi-AZ (Primary + Standby)]
-    CH_US[ClickHouse Cluster (Shards + Replicas)]
+    RDS_US[RDS Multi-AZ Primary + Standby]
+    CH_US[ClickHouse Cluster Shards + Replicas]
     S3_US[S3 - SPA and Media]
   end
 
@@ -32,8 +30,8 @@ flowchart TB
       AZ3_KSA[AZ-3]
     end
     K8S_KSA[K8s on OCI - API Pods]
-    ADB[Autonomous DB (HA within KSA)]
-    CH_KSA[ClickHouse Cluster (Replicas across AZs)]
+    ADB[Autonomous DB - HA within KSA]
+    CH_KSA[ClickHouse Cluster - Replicas across AZs]
     OCI_OS[OCI Object Storage - Media & Uploads]
   end
 
