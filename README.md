@@ -4,7 +4,7 @@
 flowchart TB
   subgraph Global
     DNS[Route 53 Geo DNS]
-    CF[CloudFront (Global or Regional Distros)]
+    CF[CloudFront(Global or Regional Distros)]
   end
 
   DNS --> CF
