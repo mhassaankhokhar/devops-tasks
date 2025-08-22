@@ -1,6 +1,6 @@
 # nexaquanta
 
-```
+```mermaid
 sequenceDiagram
 participant U as Uploader (KSA/US)
 participant CF as CloudFront (Global or Separate Distributions)
